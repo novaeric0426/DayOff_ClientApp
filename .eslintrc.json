@@ -1,0 +1,43 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2022": true,
+    "node": true
+  },
+  "extends": [
+    "mantine",
+    "plugin:@next/next/recommended"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "ignorePatterns": [
+    "/next.config.js"
+  ],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "linebreak-style": "off",
+    "no-plusplus": "off",
+    "max-len": "off",
+    "indent": [
+      "error",
+      2,
+      { "SwitchCase": 1 }
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "comma-dangle": [
+      "error",
+      "always-multiline"
+    ],
+    "no-trailing-spaces": "error",
+    "@typescript-eslint/no-unused-vars": "warn"
+  }
+}
