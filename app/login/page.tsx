@@ -1,8 +1,10 @@
 "use client";
-
+import { redirect } from "next/dist/server/api-utils";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const LoginForm = () => {
+    const router = useRouter();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -18,6 +20,10 @@ const LoginForm = () => {
         });
         if (response.ok) {
             console.log("success");
+            const responseData = await response.json();
+            console.log(responseData);
+            localStorage.setItem("token", responseData.token); // Save token to localStorage
+            router.push('/main');
         } else {
             console.log("failed!");
         }
@@ -44,7 +50,9 @@ const LoginForm = () => {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </div>
-                <button type="submit">Login</button>
+                <button type="submit">
+                    Login
+                </button>
             </form>
         </div>
     );

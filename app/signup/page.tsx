@@ -16,7 +16,7 @@ const SignUpForm = () => {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ email:email, password:password, name:name, role: "admin" }),
+                body: JSON.stringify({ email:email, password:password, name:name, role: "user" }),
             });
             if (response.ok) {
                 console.log("success");
