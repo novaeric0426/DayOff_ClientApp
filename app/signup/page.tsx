@@ -16,7 +16,12 @@ const SignUpForm = () => {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ email:email, password:password, name:name, role: "user" }),
+                body: JSON.stringify({
+                    email: email,
+                    password: password,
+                    name: name,
+                    role: "user",
+                }),
             });
             if (response.ok) {
                 console.log("success");
@@ -24,7 +29,7 @@ const SignUpForm = () => {
                 console.log("failed!");
             }
         } catch (error) {
-            // Handle error
+            console.log(error);
         }
     };
 

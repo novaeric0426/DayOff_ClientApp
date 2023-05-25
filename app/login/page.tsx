@@ -23,6 +23,7 @@ const LoginForm = () => {
             const responseData = await response.json();
             console.log(responseData);
             localStorage.setItem("token", responseData.token); // Save token to localStorage
+            localStorage.setItem("role", responseData.role); // Save role to localStorage
             router.push('/main');
         } else {
             console.log("failed!");
