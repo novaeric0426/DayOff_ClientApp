@@ -28,6 +28,15 @@ const DayOffPage = () => {
 
     const postDayOff = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
+        if (
+            !form.values.date ||
+            !form.values.dayOffValue ||
+            !form.values.reason
+        ) {
+            console.log("Please fill in all form fields");
+            return;
+        }
         try {
             const response = await fetch(
                 "http://localhost:10000/dayoff/submit",
