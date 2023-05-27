@@ -52,7 +52,7 @@ const DayOffPage = () => {
             if (response.ok) {
                 console.log("DayOff Submit Success!");
             }
-        } catch (error) {
+        } catch (error: any) {
             console.log(error);
         }
     };

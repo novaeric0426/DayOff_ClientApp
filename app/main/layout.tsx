@@ -17,7 +17,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
                 <div className="navbar">
                     <Link href="/">홈</Link>
                     <Link href="/main/dashboard">대시보드</Link>
-                    <Link href="/login">휴가 신청</Link>
+                    <Link href="/main/dayoff">휴가 신청</Link>
                     <Link href="/main/mypage">개인 페이지</Link>
                     {role === "admin" ? (
                         <Link href="/admin">관리자 페이지</Link>

@@ -9,7 +9,8 @@ export const metadata = {
 };
 
 const adminLayout = ({ children }: { children: React.ReactNode }) => {
-    const role: string | null = localStorage.getItem("role");  //관리자 인증
+    //const role: string | null = localStorage.getItem("role");  //관리자 인증
+    const role: string | null = "admin";  //관리자 인증
 
     return (
         <html lang="en">
