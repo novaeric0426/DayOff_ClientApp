@@ -1,5 +1,5 @@
 "use client";
-
+import { useRouter } from 'next/navigation'
 import React, { useState } from "react";
 import {
     Badge,
@@ -30,10 +30,12 @@ const jobColors: Record<string, string> = {
 };
 
 const UsersTable = ({ data }: UsersTableProps) => {
+    const router = useRouter();
+    
     const [opened, { open, close }] = useDisclosure(false);
     const [newPassword, setNewPassword] = useState("");
     const [targetId,setTargetId] = useState("");
-    
+
     const theme = useMantineTheme();
     const rows = data.map((item) => (
         <tr key={item.name}>
@@ -61,6 +63,7 @@ const UsersTable = ({ data }: UsersTableProps) => {
             <td>
                 <Text fz="sm" c="dimmed">
                     <Button onClick={()=>{open();setTargetId(item._id)}}>Edit Password</Button>
+                    <Button onClick={()=>{}} color="red">Delete Account</Button>
                 </Text>
             </td>
         </tr>
