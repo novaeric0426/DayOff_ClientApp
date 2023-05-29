@@ -1,3 +1,6 @@
+
+import UserTable from "./userlist";
+
 const adminPage = async () => {
     const GetUsers = async () => {
         try {
@@ -18,19 +21,11 @@ const adminPage = async () => {
     };
     const users = await GetUsers();
     console.log(users);
+    
     return (
         <div>
             <h1>Admin Page!</h1>
-            {users.map((user: any) => {
-                return (
-                    <div className="card">
-                        <h3>이메일</h3>
-                        {user.email}
-                        <h3>이름</h3>
-                        {user.name}
-                    </div>
-                );
-            })}
+            <UserTable data= {users} />
         </div>
     );
 };
